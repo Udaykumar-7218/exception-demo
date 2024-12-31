@@ -3,6 +3,8 @@ package dec31;
 
 interface Bank{
 	void withDraw(int amt) throws InSufficientBalanceException;
+	void deposit(int amt) throws limiteExceedsException;
+
 	
 }
 public class demo6 {

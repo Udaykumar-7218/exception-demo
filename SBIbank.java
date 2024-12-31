@@ -1,6 +1,6 @@
 package dec31;
 
-public class SBIbank implements Bank {
+public class SBibank implements Bank {
  int balance;
  
 
@@ -28,4 +28,20 @@ public class SBIbank implements Bank {
 	 e.printStackTrace();
 }
  }
+	public void deposit(int amt) {
+		try {
+			if(amt>50000) {
+				System.out.println("amt "+amt+"trying to deposit....");
+				throw new limiteExceedsException("morentha 50k is not posssible");
+				}
+			else {
+				System.out.println("successfully deposit amount"+amt);
+				this.balance=this.balance+amt;
+			}
+		}catch(limiteExceedsException e) {
+			 System.out.println("error occured during with draw...");
+			 e.printStackTrace();
+	}
  }
+}
+
